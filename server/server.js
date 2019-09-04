@@ -18,9 +18,20 @@ app.get('/api/nearby/:id', (req, res) => {
   });
 })
 
-app.get('/api/reservations/:id', (req, res) => {
+app.get('/api/reservation/search/:id', (req, res) => {
   let id = req.params.id;
-  axios.get(`http://127.0.0.1:5004/api/reservations/${id}`)
+  axios.get(`http://127.0.0.1:1314/api/reservation/search/${id}`)
+  .then(function (response) {
+    res.send(response.data)
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+})
+
+app.get('/api/reviews/host/:id', (req, res) => {
+  let id = req.params.id;
+  axios.get(`http://127.0.0.1:5002/api/reviews/host/${id}`)
   .then(function (response) {
     res.send(response.data)
   })

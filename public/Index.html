@@ -6,8 +6,8 @@
     <title>FEC DemoTEST</title>
   </head>
   <body>
-    <div id="Info"></div>
     <div id="Reservation"></div>
+    <div id="Info"></div>
     <div id="Nearby"></div>
     <div id="Reviews"></div>
 <!-- These two lines are just one way to get the React library running in the client's browser -->
@@ -15,8 +15,8 @@
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <!-- <script src="http://localhost:3001/app.js"></script> -->
     <script src="http://localhost:1314/bundle.js"></script>
+    <script src="http://localhost:5002/bundle.js"></script>
     <script src="http://localhost:5004/bundle.js"></script>
-    <!-- <script src="http://localhost:3004/app.js"></script> -->
     <!-- see: https://reactjs.org/docs/react-without-jsx.html -->
     <script>
       // console.log(Reservation)
@@ -29,13 +29,13 @@
         document.getElementById('Reservation')
       );
       ReactDOM.render(
+        React.createElement(Reviews.default),
+        document.getElementById('Reviews')
+      );
+      ReactDOM.render(
         React.createElement(Nearby.default),
         document.getElementById('Nearby')
       );
-      // ReactDOM.render(
-      //   React.createElement(Reviews),
-      //   document.getElementById('Reviews')
-      // );
     </script>
   </body>
 </html>
